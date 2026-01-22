@@ -19,4 +19,11 @@ test "successful sign up" do
   end
 end
 
+test "invalid sign up" do
+  assert_no_difference "User.count" do
+    post sign_up_path, params: { user: { email_address: "example@user.org", password: "password", password_confirmation: "password" } }
+    assert_response :unprocessable_entity
+  end
+end
+
 end
