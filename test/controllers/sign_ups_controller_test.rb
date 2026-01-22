@@ -11,4 +11,12 @@ class SignUpsControllerTest < ActionDispatch::IntegrationTest
   get sign_up_path
   assert_redirected_to root_path
 end
+
+test "successful sign up" do
+  assert_difference "User.count" do
+    post sign_up_path, params: { user: { first_name: "Example", last_name: "User", email_address: "example@user.org", password: "password", password_confirmation: "password" } }
+    assert_redirected_to root_path
+  end
+end
+
 end
