@@ -29,4 +29,16 @@ test "regular user cannot access /store/users" do
   assert_equal "You aren't allowed to do that.", flash[:alert]
 end
 
+test "admins can access /store/products" do
+  sign_in_as users(:admin)
+  get store_products_path
+  assert_response :success
+end
+
+test "admins can access /store/users" do
+  sign_in_as users(:admin)
+  get store_users_path
+  assert_response :success
+end
+
 end
