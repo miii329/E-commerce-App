@@ -33,5 +33,4 @@ test "sign up ignores admin attribute" do
   end
   refute User.find_by(email_address: "example@user.org").admin?
 end
-
 end
