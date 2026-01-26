@@ -29,7 +29,7 @@ Rails.application.configure do
 
   # 画像解析を非同期（バックグラウンド）で行わない設定
   config.active_storage.analyze_active_job = false
-  
+
   # ジョブをバックグラウンドではなく、その場で即座に実行する設定
   config.active_job.queue_adapter = :inline
 
