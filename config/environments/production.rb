@@ -27,6 +27,9 @@ Rails.application.configure do
   # Store uploaded files with Cloudinary in production
   config.active_storage.service = :cloudinary
 
+  # 画像解析を非同期（バックグラウンド）で行わない設定
+  config.active_storage.analyze_active_job = false
+
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
   # config.assume_ssl = true
 
