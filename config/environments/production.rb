@@ -27,9 +27,6 @@ Rails.application.configure do
   # Store uploaded files with Cloudinary in production
   config.active_storage.service = :cloudinary
 
-  # Active Storageのルーティングを有効にする
-  config.active_storage.resolve_model_to_route = :rails_storage_proxy
-
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
   # config.assume_ssl = true
 
